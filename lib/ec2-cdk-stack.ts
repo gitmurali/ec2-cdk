@@ -138,9 +138,9 @@ export class Ec2CdkStack extends cdk.Stack {
     const sourceOutput = new Artifact();
     const githubSourceAction = new GitHubSourceAction({
       actionName: "GithubSource",
-      oauthToken: SecretValue.secretsManager("github-oauth-token"), // MAKE SURE TO SET UP BEFORE
-      owner: "gitmurali", // THIS NEEDS TO BE CHANGED TO YOUR OWN USER ID
-      repo: "sample-python-web-app",
+      oauthToken: SecretValue.secretsManager("github-oauth-token"),
+      owner: "gitmurali",
+      repo: "ec2-cdk",
       branch: "main",
       output: sourceOutput,
     });
@@ -197,10 +197,5 @@ export class Ec2CdkStack extends cdk.Stack {
     });
 
     deployStage.addAction(pythonDeployAction);
-
-    // Output the public IP address of the EC2 instance
-    new cdk.CfnOutput(this, "IP Address", {
-      value: webServer.instancePublicIp,
-    });
   }
 }
