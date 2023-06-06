@@ -170,7 +170,7 @@ export class Ec2CdkStack extends cdk.Stack {
       this,
       "python_deploy_application",
       {
-        applicationName: "python-webApp",
+        applicationName: "ec2-cdk",
       }
     );
 
