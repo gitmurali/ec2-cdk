@@ -2,7 +2,13 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/SampleApp
+    destination: /var/www/html/SampleApp
+permissions:
+  - object: /var/www/html/SampleApp/scripts
+    owner: root
+    mode: 777
+    type:
+      - file
 hooks:
   BeforeInstall:
     - location: scripts/setup_dirs.sh
