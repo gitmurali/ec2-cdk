@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R 777 /var/www/SampleApp
+chmod -R 777 /var/www/html/SampleApp/scripts
